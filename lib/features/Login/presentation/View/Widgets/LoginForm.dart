@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/Styles.dart';
-import 'LoginButton.dart';
+import '../../../../../core/Widgets/ActionButton.dart';
 import 'TextField.dart';
 
 class LoginForm extends StatelessWidget {
@@ -45,7 +45,7 @@ class LoginForm extends StatelessWidget {
                   const SizedBox(
                     height: 32,
                   ),
-                  LoginButton(buttontext: "Login",onpressed: (){
+                  ActionButton(buttontext: "Login",onpressed: (){
                     GoRouter.of(context).push('/HomePage');
                   }),
                   const SizedBox(

@@ -14,16 +14,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-    appBar: AppBar(title: Text('Eelu',style: Styles.style22.copyWith(color: Colors.black),),centerTitle: true,backgroundColor: Colors.white,),
-    drawer: NavigationDrawerWidget(),  
+    return Scaffold(
+      appBar: MainAppBar(),
+      drawer: NavigationDrawerWidget(),
       body: Column(
         children: [
           // HomeAppBar(),
-          ImageSlider()
+          Expanded(child: ImageSlider())
         ],
       ),
     );
   }
 }
-
+ 

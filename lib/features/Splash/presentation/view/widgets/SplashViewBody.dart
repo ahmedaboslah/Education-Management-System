@@ -31,7 +31,7 @@ class _SplashViewBodyState extends State<SplashViewBody>{
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: SizedBox(
               height: 150,
-              child: Image.asset(Logo,width: double.infinity,),
+              child: Image.asset(logo,width: double.infinity,),
             ),
           ),
       ],

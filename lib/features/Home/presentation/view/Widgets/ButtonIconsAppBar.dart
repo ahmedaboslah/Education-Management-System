@@ -22,7 +22,7 @@ class _ButtonIconState extends State<ButtonIcon> {
       padding: const EdgeInsets.all(1),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
-        color: LightColor
+        color: lightColor
       ),
       child: IconButton(onPressed: widget.onpressed, icon:widget.icon),
     );
