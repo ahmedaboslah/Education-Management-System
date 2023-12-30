@@ -3,25 +3,38 @@ import 'package:flutter/material.dart';
 import '../../../../../core/Widgets/ActionButton.dart';
 
 class ViewButton extends StatelessWidget {
-  const ViewButton({
-    super.key,
-  });
-
+  ViewButton({super.key, this.onpressed, required this.viewgrade});
+  Function()? onpressed;
+  bool viewgrade;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SizedBox(
-            width: MediaQuery.of(context).size.width  / 3,
-            child: ActionButton(
-                buttontext: 'View Playlist', onpressed: () {})),
-                
-        SizedBox(
-            width: MediaQuery.of(context).size.width / 3,
-            child: ActionButton(
-                buttontext: 'View Grade', onpressed: () {},buttoncolor: Colors.green.shade300,)),
-      ],
-    );
+    return viewgrade
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: ActionButton(
+                      buttontext: 'View Playlist', onpressed: onpressed!)),
+              SizedBox(
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: ActionButton(
+                    buttontext: 'View Grade',
+                    onpressed: () {},
+                    buttoncolor: Colors.green.shade300,
+                  )),
+            ],
+          )
+        : Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 200),
+                child: SizedBox(
+                    width: double.infinity,
+                    child: ActionButton(
+                        buttontext: 'View Playlist', onpressed: onpressed!)),
+              ),
+            ),
+          ]);
   }
 }

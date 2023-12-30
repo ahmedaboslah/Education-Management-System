@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/Styles.dart';
 import 'coursedtails.dart';
@@ -7,10 +8,19 @@ import 'courseimage.dart';
 import 'viewButton.dart';
 
 class mainContainerCourse extends StatelessWidget {
-  const mainContainerCourse({
+   mainContainerCourse({
     super.key,
+    required this.viewgrade,
+    required this.PathName,
+    required this.image,
+    required this.coursename,
+    required this.color
   });
-
+  String PathName;
+  String image;
+  String coursename;
+  Color color;
+bool viewgrade;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,15 +38,19 @@ class mainContainerCourse extends StatelessWidget {
           child: coursedetails(),
         ),
         const SizedBox(height: 15,),
-        const courseImage(),
+        courseImage(image: image,color: color,),
         const SizedBox(height: 15,),
         Text(
-          'Complete Web Tutorial',
+          'Complete $coursename Tutorial',
           style: Styles.style20
               .copyWith(fontWeight: FontWeight.w600, fontSize: 18),
         ),
         const SizedBox(height: 15,),
-        const ViewButton()
+        ViewButton(
+          viewgrade:viewgrade ,
+          onpressed: () {
+          GoRouter.of(context).push('/$PathName');
+        },)
       ]),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:education_management_system/features/About/presentation/view/AboutPage.dart';
 import 'package:education_management_system/features/Contact%20us/presentation/view/ContactUs.dart';
 import 'package:education_management_system/features/Courses/presentation/view/CoursesPage.dart';
+import 'package:education_management_system/features/Courses/presentation/view/Widgets/Inside_Course_Details.dart';
 import 'package:education_management_system/features/Home/presentation/view/HomePage.dart';
 import 'package:education_management_system/features/Login/presentation/View/LoginPage.dart';
 import 'package:education_management_system/features/Professor/presentation/view/ProfessorPage.dart';
@@ -33,6 +34,10 @@ abstract class AppRouter {
       GoRoute(
         path: '/CoursesPage',
         builder: (context, state) => const CoursesPage(),
+      ),
+      GoRoute(
+        path: '/Inside_Course_Details.dart',
+        builder: (context, state) => const InsideCourseDetails(),
       ),
       GoRoute(
         path: '/ProfessorPage',

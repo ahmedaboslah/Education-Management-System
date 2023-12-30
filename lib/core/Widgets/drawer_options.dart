@@ -22,7 +22,7 @@ class _DrawerOptionsState extends State<DrawerOptions> {
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).push('/$locate');
-        color=const Color.fromARGB(255, 216, 215, 215);
+        isLightMode=false;
         setState(() {
           
         });

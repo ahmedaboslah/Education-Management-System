@@ -1,3 +1,4 @@
+import 'package:education_management_system/constants.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/Styles.dart';
 import 'maincontainercourse.dart';
@@ -21,9 +22,15 @@ class CoursesPageViewBody extends StatelessWidget {
         height: 30,
         thickness: 2,
       ),
-      const Padding(
-        padding: EdgeInsets.all(16),
-        child: mainContainerCourse(),
+      Padding(
+        padding: const EdgeInsets.all(16),
+        child: mainContainerCourse(
+          color: mainColor,
+          image: 'assets/coursesimage/pngegg.png',
+          viewgrade: true,
+          PathName: 'Inside_Course_Details.dart',
+          coursename: 'Web',
+        ),
       )
     ]);
   }

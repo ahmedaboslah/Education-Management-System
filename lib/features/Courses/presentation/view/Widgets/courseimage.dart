@@ -1,22 +1,24 @@
 
+import 'package:education_management_system/constants.dart';
 import 'package:flutter/material.dart';
 
 class courseImage extends StatelessWidget {
-  const courseImage({
-    super.key,
+   courseImage({
+    super.key,required this.image,required this.color
   });
-
+String image;
+Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: 180,
       decoration: BoxDecoration(
-        color: Colors.amber,
+        color: color,
         borderRadius: BorderRadius.circular(8),
-        image: const DecorationImage(
+        image:  DecorationImage(
           image: AssetImage(
-            'assets/images/weblogo.png',
+            image,
           ),
         ),
       ),
