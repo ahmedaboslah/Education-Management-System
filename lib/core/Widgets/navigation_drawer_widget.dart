@@ -1,8 +1,9 @@
 import 'package:education_management_system/constants.dart';
-import 'package:education_management_system/core/utils/Styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'ActionButton.dart';
+import 'StudentAvatar.dart';
 import 'drawer_options.dart';
 
 class NavigationDrawerWidget extends StatefulWidget {
@@ -16,6 +17,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: SingleChildScrollView(
@@ -23,56 +25,49 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
             const SizedBox(
               height: 20,
             ),
-            CircleAvatar(
-              radius: 40,
-              backgroundColor: Colors.red,
-              child: Image.asset(imageAvatar),
-            ),
-            const SizedBox(height: 10,),
-            Text(
-              'shaikh anas',
-              style: Styles.style22.copyWith(fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(height: 10,),
-            Text(
-              'student',
-              style: Styles.style18,
-            ),
+            StudentAvatar(),
             const SizedBox(height: 10,),
             ActionButton(
               buttontext: 'View Profile',
               onpressed: () {
-                isLightMode=false;
-                setState(() {
-                  
-                });
+                GoRouter.of(context).push('/Profile');
               },
             ),
             const SizedBox(height: 20,),
-            DrawerOptions(
-              icon: Icon(Icons.home),
-              optionName: 'home',
-              Location: 'HomePage',
+            SafeArea(
+              child: DrawerOptions(
+                icon: Icon(Icons.home),
+                optionName: 'home',
+                Location: 'HomePage',
+              ),
             ),
-            DrawerOptions(
-              icon: Icon(Icons.question_mark),
-              optionName: 'about',
-              Location: 'AboutPage',
+            SafeArea(
+              child:isProfessor?Container(): DrawerOptions(
+                icon: Icon(Icons.question_mark),
+                optionName: 'about',
+                Location: 'AboutPage',
+              ),
             ),
-            DrawerOptions(
-              icon: Icon(Icons.school),
-              optionName: 'courses',
-              Location: 'CoursesPage',
+            SafeArea(
+              child: DrawerOptions(
+                icon: Icon(Icons.school),
+                optionName: 'courses',
+                Location:isProfessor?'course_content': 'CoursesPage',
+              ),
             ),
-            DrawerOptions(
-              icon: Icon(Icons.badge),
-              optionName: 'professor ',
-              Location: 'ProfessorPage',
+            SafeArea(
+              child: DrawerOptions(
+                icon: Icon(Icons.badge),
+                optionName:isProfessor?'Student': 'professor ',
+                Location: 'ProfessorPage',
+              ),
             ),
-            DrawerOptions(
-              icon: Icon(Icons.headset_mic),
-              optionName: 'contact us',
-              Location: 'ContactUs',
+            SafeArea(
+              child:isProfessor?Container(): DrawerOptions(
+                icon: Icon(Icons.headset_mic),
+                optionName: 'contact us',
+                Location: 'ContactUs',
+              ),
             ),
           ]),
         ),
@@ -80,4 +75,3 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
     );
   }
 }
-

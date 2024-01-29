@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/Widgets/AppBar.dart';
 import '../../../../core/Widgets/navigation_drawer_widget.dart';
+import 'Widgets/ProfessorViewbody.dart';
 
 class ProfessorPage extends StatelessWidget {
   const ProfessorPage({super.key});
@@ -11,6 +11,7 @@ class ProfessorPage extends StatelessWidget {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: MainAppBar(),
+      body: ProfessorViewBody(),
     );
   }
 }

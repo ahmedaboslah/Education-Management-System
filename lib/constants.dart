@@ -7,3 +7,4 @@ const  Color mainColor=Color(0xff8e44ad);
 const  String logo='assets/images/EELU_LOGO.png';
 const String imageAvatar="assets/images/pic-1.jpg";
 bool isLightMode=true;
+bool isProfessor=false;

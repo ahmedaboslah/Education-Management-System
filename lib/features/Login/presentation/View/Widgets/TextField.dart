@@ -1,6 +1,7 @@
 import 'package:education_management_system/constants.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class textfield extends StatelessWidget {
    textfield({super.key,required this.hintText});
   String hintText;

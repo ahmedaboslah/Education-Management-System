@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/Styles.dart';
 
+// ignore: must_be_immutable
 class coursedetails extends StatelessWidget {
-  const coursedetails({
-    super.key,
+   coursedetails({
+    super.key,this.text='21-10-2022'
   });
-
+String? text;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,7 +29,7 @@ class coursedetails extends StatelessWidget {
                   fontWeight: FontWeight.w600, fontSize: 17),
             ),
             Text(
-              '21-10-2022',
+              text!,
               style: Styles.style18.copyWith(fontSize: 13),
             )
           ],

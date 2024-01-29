@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/Widgets/ActionButton.dart';
 
+// ignore: must_be_immutable
 class ViewButton extends StatelessWidget {
-  ViewButton({super.key, this.onpressed, required this.viewgrade});
+  ViewButton({super.key, this.onpressed, required this.viewgrade,this.btntext='View Playlist'});
   Function()? onpressed;
   bool viewgrade;
+  String btntext;
   @override
   Widget build(BuildContext context) {
     return viewgrade
@@ -32,7 +34,7 @@ class ViewButton extends StatelessWidget {
                 child: SizedBox(
                     width: double.infinity,
                     child: ActionButton(
-                        buttontext: 'View Playlist', onpressed: onpressed!)),
+                        buttontext: btntext, onpressed: onpressed!)),
               ),
             ),
           ]);
