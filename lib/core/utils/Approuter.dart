@@ -8,6 +8,9 @@ import 'package:education_management_system/features/Login/presentation/View/Log
 import 'package:education_management_system/features/Professor/presentation/view/ProfessorPage.dart';
 import 'package:education_management_system/features/Profile/presentation/view/Profile.dart';
 import 'package:education_management_system/features/Splash/presentation/view/SplashView.dart';
+import 'package:education_management_system/features/Students/presentation/view/students.dart';
+import 'package:education_management_system/features/Students/presentation/view/widgets/StudentsDetailPage.dart';
+import 'package:education_management_system/features/Students/presentation/view/widgets/Students_information.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/Courses/data/Web_Course_data.dart';
@@ -56,11 +59,25 @@ abstract class AppRouter {
         path: '/Profile',
         builder: (context, state) =>  ProfilePage(),
       ),
-      //ProfileViewdetailspage
+      
       GoRoute(
         path: '/ProfileViewdetailspage',
         builder: (context, state) =>  ProfessorViewPagedetails(),
       ),
+      GoRoute(
+        path: '/students',
+        builder: (context, state) =>  StudentsPage(),
+      ),
+      //Students_information
+      GoRoute(
+        path: '/StudentsDetailPage',
+        builder: (context, state) =>  StudentsDetailsPage(),
+      ),
+      GoRoute(
+        path: '/Students_information',
+        builder: (context, state) =>  StudentInformation(),
+      ),
     ],
+
   );
 }

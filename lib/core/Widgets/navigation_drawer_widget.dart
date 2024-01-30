@@ -59,7 +59,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               child: DrawerOptions(
                 icon: Icon(Icons.badge),
                 optionName:isProfessor?'Student': 'professor ',
-                Location: 'ProfessorPage',
+                Location:isProfessor?'students': 'ProfessorPage',
               ),
             ),
             SafeArea(
