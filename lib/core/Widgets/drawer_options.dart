@@ -22,7 +22,7 @@ class _DrawerOptionsState extends State<DrawerOptions> {
     String locate=widget.Location;
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push('/$locate');
+        GoRouter.of(context).replace('/$locate');
         isLightMode=false;
         setState(() {
           

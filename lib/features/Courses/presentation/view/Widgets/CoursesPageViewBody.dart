@@ -27,7 +27,7 @@ class CoursesPageViewBody extends StatelessWidget {
         child: mainContainerCourse(
           color: mainColor,
           image: 'assets/coursesimage/pngegg.png',
-          viewgrade: true,
+          viewgrade: false,
           PathName: 'Inside_Course_Details.dart',
           coursename: 'Web',
         ),

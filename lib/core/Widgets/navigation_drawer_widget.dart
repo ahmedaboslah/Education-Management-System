@@ -30,7 +30,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
             ActionButton(
               buttontext: 'View Profile',
               onpressed: () {
-                GoRouter.of(context).push('/Profile');
+                GoRouter.of(context).replace('/Profile');
               },
             ),
             const SizedBox(height: 20,),
