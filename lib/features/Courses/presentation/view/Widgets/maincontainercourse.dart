@@ -7,23 +7,23 @@ import 'coursedtails.dart';
 import 'courseimage.dart';
 import 'viewButton.dart';
 
-// ignore: must_be_immutable
-class mainContainerCourse extends StatelessWidget {
-  mainContainerCourse(
+
+class MainContainerCourse extends StatelessWidget {
+ const MainContainerCourse(
       {super.key,
       required this.viewgrade,
-      required this.PathName,
+      required this.pathName,
       required this.image,
       required this.coursename,
       required this.color,
       this.isstudent=true
       });
-  String PathName;
-  String image;
-  String coursename;
-  Color color;
-  bool viewgrade;
-  bool ?isstudent;
+ final String pathName;
+ final String image;
+ final String coursename;
+ final Color color;
+ final bool viewgrade;
+ final bool ?isstudent;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,7 +63,7 @@ class mainContainerCourse extends StatelessWidget {
         ViewButton(
           viewgrade: viewgrade,
           onpressed: () {
-            if (PathName == 'course_content') {
+            if (pathName == 'course_content') {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
                   return CourseContent(bckcolor: color, image: image);
@@ -73,7 +73,7 @@ class mainContainerCourse extends StatelessWidget {
               GoRouter.of(context).pop();
             }
              else {
-              GoRouter.of(context).push('/$PathName');
+              GoRouter.of(context).push('/$pathName');
             }
           },
         )

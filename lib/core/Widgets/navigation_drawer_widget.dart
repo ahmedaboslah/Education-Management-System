@@ -25,7 +25,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
             const SizedBox(
               height: 20,
             ),
-            StudentAvatar(),
+            StudentAvatar(name: name,text: 'Professor',),
             const SizedBox(height: 10,),
             ActionButton(
               buttontext: 'View Profile',
@@ -52,7 +52,7 @@ class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
               child: DrawerOptions(
                 icon: Icon(Icons.school),
                 optionName: 'courses',
-                Location:isProfessor?'course_content': 'CoursesPage',
+                Location:isProfessor?'professor_course_page': 'CoursesPage',
               ),
             ),
             SafeArea(

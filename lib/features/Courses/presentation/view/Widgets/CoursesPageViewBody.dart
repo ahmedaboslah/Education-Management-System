@@ -24,11 +24,11 @@ class CoursesPageViewBody extends StatelessWidget {
       ),
       Padding(
         padding: const EdgeInsets.all(16),
-        child: mainContainerCourse(
+        child: MainContainerCourse(
           color: mainColor,
           image: 'assets/coursesimage/pngegg.png',
           viewgrade: false,
-          PathName: 'Inside_Course_Details.dart',
+          pathName: 'Inside_Course_Details.dart',
           coursename: 'Web',
         ),
       )

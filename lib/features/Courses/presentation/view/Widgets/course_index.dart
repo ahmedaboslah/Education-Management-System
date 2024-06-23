@@ -15,11 +15,11 @@ class courseIndex extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 16),
-            child: mainContainerCourse(
+            child: MainContainerCourse(
               color: backcolors[index],
               image: courseImages[index],
               viewgrade: false,
-              PathName: 'course_content',
+              pathName: 'course_content',
               coursename: coursesName[index],
             ),
           );

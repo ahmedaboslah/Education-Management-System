@@ -33,11 +33,7 @@ class _IndentifierRadioButtonState extends State<indentifierRadioButton> {
                 setState(() {
                   currentPosition = value as String;
                   isProfessor=false;
-                });
-              },
-            ),
-          ),
-        ),
+                });},),), ),
         Container(
           width: MediaQuery.of(context).size.width *.4, 
           child: ListTile(

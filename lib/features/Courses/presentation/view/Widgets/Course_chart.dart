@@ -1,3 +1,4 @@
+import 'package:education_management_system/features/Courses/data/bie_chart_list_names.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class courseDocument extends StatefulWidget {
 
 class _courseDocumentState extends State<courseDocument> {
   int activeindex=-1;
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -67,7 +69,7 @@ class _courseDocumentState extends State<courseDocument> {
                   height: 200,
                   child: PieChart(GetChartData())),
               ),
-              Expanded(child: ChartDetails())
+              Expanded(child: ChartDetails(chartNames: ChartNames(Name1: 'Quizes', Name2: 'Assignments', Name3: 'Final', Name4: 'MidTerm', Name5: 'Project'),))
             ],
           ),
         )
@@ -81,11 +83,7 @@ class _courseDocumentState extends State<courseDocument> {
         enabled: true,
         touchCallback: (p0, piechartResponse) {
         activeindex=  piechartResponse!.touchedSection!.touchedSectionIndex;
-        setState(() {
-          
-        });
-        },
-      ),
+        setState(() { }); }, ),
       sections: [
       PieChartSectionData(
         showTitle: false,

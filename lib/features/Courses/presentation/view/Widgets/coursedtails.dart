@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/Styles.dart';
 
-// ignore: must_be_immutable
+
 class coursedetails extends StatelessWidget {
-   coursedetails({
-    super.key,this.text='21-10-2022'
+   const coursedetails({
+    super.key,this.text='21-10-2022', this.name
   });
-String? text;
+final String? text,name;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,7 +24,7 @@ String? text;
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'john deo',
+             name?? 'Ahmed',
               style: Styles.style20.copyWith(
                   fontWeight: FontWeight.w600, fontSize: 17),
             ),

@@ -11,12 +11,12 @@ class professorCourses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return mainContainerCourse(
+    return MainContainerCourse(
       isstudent: false,
       color: backcolors[1],
       image: courseImages[1],
       viewgrade: false,
-      PathName: 'course_content',
+      pathName: 'course_content',
       coursename: coursesName[1],
     );
   }

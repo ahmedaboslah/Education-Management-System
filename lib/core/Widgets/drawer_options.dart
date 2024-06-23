@@ -1,7 +1,9 @@
+import 'package:education_management_system/features/Courses/data/courses_grade_lists.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../constants.dart';
+import '../../features/Students/presentation/view/students.dart';
 import '../utils/Styles.dart';
 
 // ignore: must_be_immutable
@@ -22,11 +24,20 @@ class _DrawerOptionsState extends State<DrawerOptions> {
     String locate=widget.Location;
     return GestureDetector(
       onTap: () {
+        if(locate=='students'){
+           Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return StudentsPage(gradesList: WebCourse,);
+                },
+              ));
+        }
+        else{
         GoRouter.of(context).replace('/$locate');
-        isLightMode=false;
-        setState(() {
+        }
+        // isLightMode=false;
+        // setState(() {
           
-        });
+        // });
       },
       child: Container(
         decoration: BoxDecoration(color: color),

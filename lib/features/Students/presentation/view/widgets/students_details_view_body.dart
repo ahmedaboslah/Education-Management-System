@@ -6,9 +6,9 @@ import 'Studentindividualdetails.dart';
 
 class StudentsDetailsViewBody extends StatelessWidget {
   const StudentsDetailsViewBody({
-    super.key,
+    super.key, required this.gradesList,
   });
-
+final List gradesList;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +24,7 @@ class StudentsDetailsViewBody extends StatelessWidget {
             height: 30,
             thickness: 2,
           ),
-          StudentsindividualDetails(),
+          StudentsindividualDetails(gradesList: gradesList),
         ],
       ),
     );

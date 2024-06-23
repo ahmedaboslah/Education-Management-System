@@ -3,6 +3,8 @@ import 'package:education_management_system/features/Contact%20us/presentation/v
 import 'package:education_management_system/features/Courses/presentation/view/CoursesPage.dart';
 import 'package:education_management_system/features/Courses/presentation/view/Widgets/Inside_Course_Details.dart';
 import 'package:education_management_system/features/Courses/presentation/view/Widgets/course_content.dart';
+import 'package:education_management_system/features/Courses/presentation/view/Widgets/each_course_gardes.dart';
+import 'package:education_management_system/features/Courses/presentation/view/Widgets/professor_course_page.dart';
 import 'package:education_management_system/features/Home/presentation/view/HomePage.dart';
 import 'package:education_management_system/features/Login/presentation/View/LoginPage.dart';
 import 'package:education_management_system/features/Professor/presentation/view/ProfessorPage.dart';
@@ -12,9 +14,9 @@ import 'package:education_management_system/features/Students/presentation/view/
 import 'package:education_management_system/features/Students/presentation/view/widgets/StudentsDetailPage.dart';
 import 'package:education_management_system/features/Students/presentation/view/widgets/Students_information.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../features/Courses/data/Web_Course_data.dart';
 import '../../features/Professor/presentation/view/Widgets/ProfileViewdetailspage.dart';
+import '../../features/Students/presentation/view/widgets/each_course_student_information.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(
@@ -57,26 +59,39 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: '/Profile',
-        builder: (context, state) =>  ProfilePage(),
+        builder: (context, state) =>  const ProfilePage(),
       ),
       
       GoRoute(
         path: '/ProfileViewdetailspage',
-        builder: (context, state) =>  ProfessorViewPagedetails(),
+        builder: (context, state) =>  const ProfessorViewPagedetails(),
+      ),
+      // GoRoute(
+      //   path: '/students',
+      //   builder: (context, state) =>  const StudentsPage(),
+      // ),
+      // //each_course_gardes
+      // GoRoute(
+      //   path: '/StudentsDetailPage',
+      //   builder: (context, state) =>  const StudentsDetailsPage(),
+      // ),
+      // GoRoute(
+      //   path: '/Students_information',
+      //   builder: (context, state) =>  const StudentInformation(),
+      // ),
+      GoRoute(
+        path: '/each_course_gardes',
+        builder: (context, state) =>  EachCourseGrades(),
+      ),
+      //each_course_student_information
+      GoRoute(
+        path: '/professor_course_page',
+        builder: (context, state) =>  const ProfessorCoursePage(),
       ),
       GoRoute(
-        path: '/students',
-        builder: (context, state) =>  StudentsPage(),
-      ),
-      //Students_information
-      GoRoute(
-        path: '/StudentsDetailPage',
-        builder: (context, state) =>  StudentsDetailsPage(),
-      ),
-      GoRoute(
-        path: '/Students_information',
-        builder: (context, state) =>  StudentInformation(),
-      ),
+        path: '/each_course_student_information',
+        builder: (context, state) =>   EachStudentInformation(),
+      )
     ],
 
   );

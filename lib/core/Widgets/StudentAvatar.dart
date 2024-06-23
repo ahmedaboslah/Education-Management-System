@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 import '../utils/Styles.dart';
 
-// ignore: must_be_immutable
+
 class StudentAvatar extends StatelessWidget {
    StudentAvatar({
-    super.key,this.text='student'
+    super.key,this.text='student',required this.name
   });
- String? text;
+  String text,name;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -20,14 +20,16 @@ class StudentAvatar extends StatelessWidget {
     ),
     const SizedBox(height: 10,),
     Text(
-      'shaikh anas',
+     name?? 'ahmed salah',
       style: Styles.style22.copyWith(fontWeight: FontWeight.w500),
     ),
     const SizedBox(height: 10,),
+    name!='Ahmed'?
     Text(
-     isProfessor?'Professor': text!,
+      text=='student' ? 
+     isProfessor?name!=null?'Student':'Professor': text:isProfessor?'Professor':'Student',
       style: Styles.style18,
-    ),
+    ):Text(text,style: Styles.style18,),
     ],);
   }
 }

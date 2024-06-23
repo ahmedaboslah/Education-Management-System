@@ -6,9 +6,9 @@ import 'StudentMainContainer.dart';
 
 class StudentViewPage extends StatelessWidget {
   const StudentViewPage({
-    super.key,
+    super.key, required this.gradesList,
   });
-
+final List gradesList;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +24,7 @@ class StudentViewPage extends StatelessWidget {
             height: 30,
             thickness: 2,
           ),
-          StudentMainContainer(),
+          StudentMainContainer(gradesList: gradesList),
         ],
       ),
     );

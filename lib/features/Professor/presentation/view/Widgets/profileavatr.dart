@@ -1,4 +1,5 @@
 
+import 'package:education_management_system/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/Widgets/StudentAvatar.dart';
@@ -20,7 +21,7 @@ class profileavatar extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: StudentAvatar(
-          text: 'Professor@gmail.com',
+          text: 'Professor@gmail.com',name: 'Ahmed',
         ),
       ),
     );

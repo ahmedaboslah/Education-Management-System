@@ -1,4 +1,5 @@
 
+import 'package:education_management_system/features/Students/presentation/view/widgets/StudentsDetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,9 +9,10 @@ import 'Course_Details.dart';
 
 class ClassInformation extends StatelessWidget {
   const ClassInformation({
-    super.key,
+    super.key, required this.gradesList, required this.coursename,
   });
-
+final List gradesList;
+final String coursename;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +24,7 @@ class ClassInformation extends StatelessWidget {
         children: [
           Text('Year 1',style: Styles.style20,),
           CourseDetails(
-            num: 'Html',
+            num: coursename,
             text: 'Course: ',
           ),
           CourseDetails(
@@ -33,7 +35,11 @@ class ClassInformation extends StatelessWidget {
           ViewButton(
             viewgrade: false,
             onpressed: () {
-              GoRouter.of(context).push('/StudentsDetailPage');
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return StudentsDetailsPage(gradesList: gradesList,);
+                },
+              ));
             },
             btntext: 'View Students',
           )
